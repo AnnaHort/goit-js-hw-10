@@ -1,0 +1,35 @@
+.breed-select {
+    background-color: beige;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.breed-select:hover,
+.breed-select:focus {
+    border-color: #999;
+    outline: none;
+}
+
+select option {
+    background-color: #f1f1f1;
+    color: #333;
+  }
+
+.loader {
+    display: block;
+}
+
+.error {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+.cat-info {
+    text-align: center;
+}
+
+h2 {
+    background-color: beige;
+}

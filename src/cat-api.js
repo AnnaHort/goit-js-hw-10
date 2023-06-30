@@ -1,3 +1,5 @@
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+
 export const selectEl = document.querySelector('.breed-select');
 const catInfoContainer = document.querySelector('.cat-info');
 const loaderEl = document.querySelector('.loader');
@@ -8,6 +10,7 @@ export const BASE_URL = 'https://api.thecatapi.com/v1';
 
 const showLoader = () => {
   loaderEl.style.display = 'block';
+  loaderEl.textContent = Notify.info('Loading data, please wait...')
 };
 
 const hideLoader = () => {
@@ -32,6 +35,7 @@ const hideCatInfo = () => {
 
 const showError = () => {
   errorEl.style.display = 'block';
+  errorEl.textContent = Notify.error('Oops! Something went wrong! Try reloading the page!')
 };
 
 const hideError = () => {
@@ -92,7 +96,7 @@ export const fetchCatByBreed = (breedId) => {
         catInfoContainer.innerHTML = catImage + catInfo;
         showCatInfo();
       } else {
-        console.log('No cat data found.');
+        Notify.failure('No cat data found.');
       }
     })
     .catch((error) => {

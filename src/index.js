@@ -1,3 +1,4 @@
+
 // іменований імпорт
 import {selectEl, BASE_URL, fetchBreeds, fetchCatByBreed} from './cat-api';
 // Виклик функції fetchBreeds для отримання порід котів та їх відображення на сторінці

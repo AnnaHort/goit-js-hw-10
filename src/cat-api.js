@@ -1,4 +1,6 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import SlimSelect from 'slim-select'
+import '../node_modules/slim-select/dist/slimselect.css'
 
 export const selectEl = document.querySelector('.breed-select');
 const catInfoContainer = document.querySelector('.cat-info');
@@ -59,7 +61,11 @@ export const fetchBreeds = () => {
       const catInfo = data
         .map(({ id, name }) => `<option value="${id}">${name}</option>`)
         .join(" ");
+
       selectEl.insertAdjacentHTML("beforeend", catInfo);
+
+
+  
     })
     .catch((error) => {
       console.log('Failure', error);
@@ -68,6 +74,9 @@ export const fetchBreeds = () => {
     .finally(() => {
       hideLoader();
       showBreedSelect();
+      new SlimSelect({
+        select: '#single'
+      })
     });
 };
 
@@ -108,7 +117,7 @@ export const fetchCatByBreed = (breedId) => {
     });
 };
 
-  
+
   
   
   
